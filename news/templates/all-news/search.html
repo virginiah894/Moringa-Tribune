@@ -1,0 +1,20 @@
+{% extends 'all-news/base.html'%}
+{%block content%}
+<div class="row">
+  {% if articles %}
+  <h2>found {{articles|length}} of searched term {{message}}</h2>
+  {% else %}
+  <h2>found 0 articles on search term {{message}}</h2>
+  {% endif %}
+</div>
+<div class="row">
+{%if articles %}
+{% for article in articles %}
+<div class="col-sm-6 col-md-3">
+<h1>{{article.title}}</h1>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+</div>
+{% endblock %}
